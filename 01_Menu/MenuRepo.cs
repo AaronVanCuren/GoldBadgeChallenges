@@ -18,25 +18,25 @@ namespace _01_Menu
             return success;
         }
 
-        public List<MenuItem> GetContents()
+        public List<MenuItem> GetMenu()
         {
             return _menu;
         }
 
-        public MenuItem GetMenuItem(string Name)
+        public MenuItem GetMenuItem(string itemNumber)
         {
-            foreach (MenuItem content in _menu)
+            foreach (MenuItem item in _menu)
             {
-                if (Name.ToLower() == content.Name.ToLower())
+                if (itemNumber.ToLower() == item.ItemNumber.ToLower())
                 {
-                    return content;
+                    return item;
                 }
                 Console.WriteLine("Item cannot be found");
             }
             return null;
         }
 
-        public bool UpdateMenuContent(string originalMenuItem, MenuItem newMenuItem)
+        public bool UpdateMenuItem(string originalMenuItem, MenuItem newMenuItem)
         {
             MenuItem oldMenuItem = GetMenuItem(originalMenuItem);
 

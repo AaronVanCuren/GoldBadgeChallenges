@@ -37,28 +37,26 @@ namespace MenuUI
                 {
                     case "1":
                         //-- Show all content
-                        /*Console.WriteLine("Star Wars");
-                        Console.ReadKey();*/
                         ShowMenu();
                         break;
                     case "2":
-                        //-- Find content by title
+                        //-- Find content by number/name
                         ShowMenuItem();
                         break;
                     case "3":
-                        //-- Add new content
+                        //-- Add new menu item
                         CreateNewMenuItem();
                         break;
                     case "4":
-                        //-- Remove content
+                        //-- Remove menu item
                         RemoveMenuItem();
                         break;
                     case "5":
-                        //-- Update Content
+                        //-- Update menu item
                         UpdateMenuItem();
                         break;
                     case "0":
-                        //-- Exit
+                        //-- Exit program
                         continueToRun = false;
                         break;
                     default:
@@ -70,16 +68,127 @@ namespace MenuUI
             }
         }
 
+        public void ShowMenu()
+        {
+            Console.Clear();
+            List<MenuItem> Menu = _menu.GetMenu();
+            foreach (MenuItem item in Menu)
+            {
+                DisplayMenu(item);
+            }
+            Console.ReadKey();
+        }
+
+        public void DisplayMenu(MenuItem item)
+        {
+            Console.WriteLine($"Meal: {item.Name}\n" +
+                $"Description: {item.Description}\n" +
+                $"Ingredients: {item.Ingredients}\n" +
+                $"Price: {item.Price}\n" +
+                $"Meal Number: {item.ItemNumber}\n");
+        }
+
+        public void ShowMenuItem()
+        {
+            string itemNumber = GetMenuItem();
+            MenuItem item = _menu.GetMenuItem(itemNumber);
+            if (item != null)
+            {
+                DisplayMenu(item);
+            }
+            else
+            {
+                Console.WriteLine("Invalid menu item.");
+            }
+
+            Console.ReadKey();
+        }
+
+        private string GetMenuItem()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter a meal item number\n");
+            string item = Console.ReadLine();
+            return item;
+        }
+
+        public void CreateNewMenuItem()
+        {
+            Console.Clear();
+            MenuItem item = new MenuItem();
+
+            Console.WriteLine("Please enter meal name: ");
+            item.Name = Console.ReadLine();
+
+            Console.WriteLine("Please enter a description: ");
+            item.Description = Console.ReadLine();
+
+            Console.WriteLine("Please enter a list of ingredients: ");
+            item.Ingredients = new List<string>() { };
+
+            Console.WriteLine("Please enter a price: ");
+            item.Price = Console.Read();
+
+            Console.WriteLine("Pleaes enter a menu item number (Ex. one, two...etc): ");
+            item.ItemNumber = Console.ReadLine();
+
+        }
+
+        public void RemoveMenuItem()
+        {
+            Console.Clear();
+            Console.WriteLine("Which menu item would you like to remove?");
+
+            List<MenuItem> menuItems = _menu.GetMenu();
+
+            int count = 0;
+
+            foreach (MenuItem item in menuItems)
+            {
+                count++;
+                Console.WriteLine($"{count}. {item.Name}");
+            }
+
+            int targetMenuItem = int.Parse(Console.ReadLine());
+            int targetMenuItems = targetMenuItem - 1;
+
+            if (targetMenuItems >= 0 && targetMenuItems < menuItems.Count)
+            {
+                MenuItem desiredMenuItem = menuItems[targetMenuItems];
+
+                if (_menu.DeleteMenuItem(desiredMenuItem.Name))
+                {
+                    Console.WriteLine($"{desiredMenuItem.Name} was successfully removed.");
+                }
+                else
+                {
+                    Console.WriteLine("I'm sorry, I can't do that.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No content has that ID.");
+            }
+            Console.ReadKey();
+        }
+
+        public void UpdateMenuItem()
+        {
+
+        }
+
         private void SeedMenu()
         {
             MenuItem club = new MenuItem("Club", "A club sandwich, also called a clubhouse sandwich, is a sandwich of bread, " +
-                    "sliced cooked poultry, ham or fried bacon, lettuce, tomato, and mayonnaise.", new List<string>() { "bun", "ketchup" }, 3, 1);
+                    "sliced cooked poultry, ham or fried bacon, lettuce, tomato, and mayonnaise.", 
+                    new List<string>() { "bread", "sliced cooked poultry", "ham", "lettuce", "tomato", "mayonnaise" }, 3, "one");
 
             MenuItem blt = new MenuItem("BLT", "A BLT is a type of sandwich, named for the initials of its primary ingredients, " +
-                "bacon, lettuce and tomato.", new List<string>() { "bun", "ketchup" }, 4, 2);
+                "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 4, "two");
 
             MenuItem reuben = new MenuItem("Reuben", "The Reuben sandwich is an American grilled sandwich composed of corned beef, " +
-                "Swiss cheese, sauerkraut, and Russian dressing, grilled between slices of rye bread.", new List<string>() { "bun", "ketchup" }, 5, 3);
+                "Swiss cheese, sauerkraut, and Russian dressing, grilled between slices of rye bread.", 
+                new List<string>() { "rye bread", "corned beef", "swiss cheese", "sauerkraut", "russian dressing" }, 5, "three");
 
             _menu.AddMeal(club);
             _menu.AddMeal(blt);

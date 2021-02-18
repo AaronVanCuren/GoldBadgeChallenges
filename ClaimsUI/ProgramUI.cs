@@ -29,35 +29,30 @@ namespace _03_ClaimsUI
                     "3. Enter new claim\n" +
                     "4. Remove Claim\n" +
                     "5. Update streaming content\n" +
-                    "6. Exit");
+                    "0. Exit");
 
                 string userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
                     case "1":
-                        //-- Show all content
                         SeeAllClaims();
                         break;
                     case "2":
-                        //-- Find content by title
                         NextClaim();
                         break;
                     case "3":
-                        //-- Add new content
                         CreateNewClaim();
                         break;
                     case "4":
-                        //-- Remove content
                         RemoveClaim();
                         break;
                     case "0":
-                        //-- Exit
                         continueToRun = false;
                         break;
                     default:
                         Console.WriteLine("Please enter a valid number between 1 and 4\n" +
-                            "or enter 6 to exit.");
+                            "or enter 0 to exit.");
                         Console.ReadKey();
                         break;
                 }

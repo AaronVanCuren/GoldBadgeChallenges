@@ -29,39 +29,33 @@ namespace _03_MenuUI
                     "3. Add new menu item\n" +
                     "4. Remove menu item\n" +
                     "5. Update menu item\n" +
-                    "6. Exit");
+                    "0. Exit");
 
                 string userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
                     case "1":
-                        //-- Show all content
                         ShowMenu();
                         break;
                     case "2":
-                        //-- Find content by number/name
                         ShowMenuItem();
                         break;
                     case "3":
-                        //-- Add new menu item
                         CreateNewMenuItem();
                         break;
                     case "4":
-                        //-- Remove menu item
                         RemoveMenuItem();
                         break;
                     case "5":
-                        //-- Update menu item
                         UpdateMenuItem();
                         break;
                     case "0":
-                        //-- Exit program
                         continueToRun = false;
                         break;
                     default:
                         Console.WriteLine("Please enter a valid number between 1 and 5.\n" +
-                            "or press 6 to exit.");
+                            "or press 0 to exit.");
                         Console.ReadKey();
                         break;
                 }

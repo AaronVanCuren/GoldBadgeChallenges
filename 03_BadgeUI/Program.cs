@@ -10,6 +10,8 @@ namespace _03_BadgeUI
     {
         static void Main(string[] args)
         {
+            ProgramUI UI = new ProgramUI();
+            UI.Run();
         }
     }
 }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace _01_Claims
 {
-    public enum ClaimCatagory { Car, Home, Theft };
+    public enum ClaimCatagory { car, home, theft };
 
     public class Claim
     {
         public int ClaimID { get; set; }
         public ClaimCatagory ClaimType { get; set; }
         public string Description { get; set; }
-        public int ClaimAmount { get; set; }
+        public double ClaimAmount { get; set; }
         public DateTime DateOfIncident { get; set; }
         public DateTime DateOfClaim { get; set; }
         public bool IsValid
@@ -29,5 +29,19 @@ namespace _01_Claims
                     return false;
             }
         }
+
+        public Claim(int claimId, ClaimCatagory claimType, string description, double claimAmount, DateTime incidentDate, DateTime claimDate, bool validity)
+        {
+            ClaimID = claimId;
+            ClaimType = claimType;
+            Description = description;
+            ClaimAmount = claimAmount;
+            DateOfIncident = incidentDate;
+            DateOfClaim = claimDate;
+        }
+
+        Claim car = new Claim(1, ClaimCatagory.car, "Car accident on 465", 400.00, DateTime.Parse(string s), DateTime.Parse(string s), true);
+        Claim home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, DateTime.Parse(string s), DateTime.Parse(string s), true);
+        Claim theft = new Claim(3, ClaimCatagory.theft, "Stolen pancakes", 4.00, DateTime.Parse(string s), DateTime.Parse(string s), true);
     }
 }

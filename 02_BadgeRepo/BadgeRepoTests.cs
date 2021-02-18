@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace ClaimsRepoTests
+namespace _02_BadgeRepoTests
 {
     [TestClass]
-    public class UnitTest1
+    public class BadgeRepoTests
     {
         [TestMethod]
         public void TestMethod1()

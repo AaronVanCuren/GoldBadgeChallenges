@@ -7,7 +7,6 @@ D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\bin\
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\obj\Debug\02_ClaimsRepoTests.csprojAssemblyReference.cache
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\obj\Debug\02_ClaimsRepoTests.csproj.CoreCompileInputs.cache
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\obj\Debug\02_ClaimsRepoTests.csproj.CopyComplete
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\obj\Debug\02_ClaimsRepoTests.dll

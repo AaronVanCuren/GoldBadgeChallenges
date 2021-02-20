@@ -10,13 +10,11 @@ namespace _03_MenuUI
     public class ProgramUI
     {
         private readonly MenuRepo _menu = new MenuRepo();
-
         public void Run()
         {
             SeedMenu();
             RunMenu();
         }
-
         private void RunMenu()
         {
             bool continueToRun = true;
@@ -30,9 +28,7 @@ namespace _03_MenuUI
                     "4. Remove menu item\n" +
                     "5. Update menu item\n" +
                     "0. Exit");
-
                 string userInput = Console.ReadLine();
-
                 switch (userInput)
                 {
                     case "1":
@@ -61,7 +57,6 @@ namespace _03_MenuUI
                 }
             }
         }
-
         public void ShowMenu()
         {
             Console.Clear();
@@ -69,10 +64,8 @@ namespace _03_MenuUI
             foreach (MenuItem item in Menu)
             {
                 DisplayMenu(item);
-            }
-            Console.ReadKey();
+            }Console.ReadKey();
         }
-
         public void DisplayMenu(MenuItem item)
         {
             Console.WriteLine($"Meal: {item.Name}\n" +
@@ -89,15 +82,11 @@ namespace _03_MenuUI
             if (item != null)
             {
                 DisplayMenu(item);
-            }
-            else
+            }else
             {
                 Console.WriteLine("Invalid menu item.");
-            }
-
-            Console.ReadKey();
+            }Console.ReadKey();
         }
-
         private string GetMenuItem()
         {
             Console.Clear();
@@ -110,76 +99,57 @@ namespace _03_MenuUI
         {
             Console.Clear();
             MenuItem item = new MenuItem();
-
             Console.WriteLine("Please enter meal name: ");
             item.Name = Console.ReadLine();
-
             Console.WriteLine("Please enter a description: ");
             item.Description = Console.ReadLine();
-
             Console.WriteLine("Please enter a list of ingredients: ");
             item.Ingredients = new List<string>() { };
-
             Console.WriteLine("Please enter a price: ");
             item.Price = Console.Read();
-
             Console.WriteLine("Pleaes enter a menu item number (Ex. one, two...etc): ");
             item.ItemNumber = Console.ReadLine();
-
         }
-
         public void RemoveMenuItem()
         {
             Console.Clear();
             Console.WriteLine("Which menu item would you like to remove?");
-
             List<MenuItem> menuItems = _menu.GetMenu();
-
             int count = 0;
-
             foreach (MenuItem item in menuItems)
             {
                 count++;
                 Console.WriteLine($"{count}. {item.Name}");
             }
-
             int targetMenuItem = int.Parse(Console.ReadLine());
             int targetMenuItems = targetMenuItem - 1;
-
             if (targetMenuItems >= 0 && targetMenuItems < menuItems.Count)
             {
                 MenuItem desiredMenuItem = menuItems[targetMenuItems];
-
                 if (_menu.DeleteMenuItem(desiredMenuItem.Name))
                 {
                     Console.WriteLine($"{desiredMenuItem.Name} was successfully removed.");
-                }
-                else
+                }else
                 {
                     Console.WriteLine("I'm sorry, I can't do that.");
                 }
-            }
-            else
+            }else
             {
                 Console.WriteLine("No content has that ID.");
             }
             Console.ReadKey();
         }
-
         public void UpdateMenuItem()
         {
 
         }
-
         private void SeedMenu()
         {
             MenuItem club = new MenuItem("Club", "A club sandwich, also called a clubhouse sandwich, is a sandwich of bread, " +
                     "sliced cooked poultry, ham or fried bacon, lettuce, tomato, and mayonnaise.",
                     new List<string>() { "bread", "sliced cooked poultry", "ham", "lettuce", "tomato", "mayonnaise" }, 3, "one");
-
             MenuItem blt = new MenuItem("BLT", "A BLT is a type of sandwich, named for the initials of its primary ingredients, " +
                 "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 4, "two");
-
             _menu.AddMeal(club);
             _menu.AddMeal(blt);
         }

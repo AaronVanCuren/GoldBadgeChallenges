@@ -10,13 +10,11 @@ namespace _03_BadgeUI
     public class ProgramUI
     {
         private readonly BadgesRepo _access = new BadgesRepo();
-
         public void Run()
         {
             SeedDoors();
             RunMenu();
         }
-
         public void RunMenu()
         {
             bool continueToRun = true;
@@ -27,9 +25,7 @@ namespace _03_BadgeUI
                     "1. Add a badge\n" +
                     "2. Edit a badge\n" +
                     "3. List all badges");
-
                 string userInput = Console.ReadLine();
-
                 switch(userInput)
                 {
                     case "1":
@@ -57,19 +53,15 @@ namespace _03_BadgeUI
             {
                 Console.Clear();
             }
-
             private void UpdateBadge()
             {
                 Console.Clear();
             }
-
             private void ShowAllBadges()
             {
                 Console.Clear();
-                Dictionary<int, List<string>> listOfBadges = _access.GetAllBadges();
-                
+                Dictionary<int, List<string>> listOfBadges = _access.GetAllBadges();                
             }
-
         public void SeedDoors()
         {
             Badges levelone = new Badges(1000, new List<string>() { "A1", "A2", "A3", "A4" });

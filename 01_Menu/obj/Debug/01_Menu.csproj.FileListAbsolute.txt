@@ -1,6 +1,6 @@
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Menu\bin\Debug\01_Menu.dll
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Menu\bin\Debug\01_Menu.pdb
-D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Menu\obj\Debug\01_Menu.csprojAssemblyReference.cache
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Menu\obj\Debug\01_Menu.csproj.CoreCompileInputs.cache
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Menu\obj\Debug\01_Menu.dll
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Menu\obj\Debug\01_Menu.pdb
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Menu\obj\Debug\01_Menu.csprojAssemblyReference.cache

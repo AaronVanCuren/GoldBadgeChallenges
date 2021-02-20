@@ -10,13 +10,12 @@ namespace _01_Badges
     {
         public int BadgeID { get; set; }
         public List<string> Doors { get; set; }
-
+        public Badges() { }
         public Badges(int badgeId, List<string> doors)
         {
             BadgeID = badgeId;
             Doors = doors;
         }
-
         Badges levelone = new Badges(1000, new List<string>() { "A1", "A2", "A3", "A4" });
         Badges leveltwo = new Badges(2000, new List<string>() { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4" });
         Badges levelthree = new Badges(3000, new List<string>() { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4" });

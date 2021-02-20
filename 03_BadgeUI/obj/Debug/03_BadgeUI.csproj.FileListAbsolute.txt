@@ -1,2 +1,10 @@
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\bin\Debug\03_BadgeUI.exe.config
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\bin\Debug\03_BadgeUI.exe
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\bin\Debug\03_BadgeUI.pdb
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\bin\Debug\01_Badges.dll
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\bin\Debug\01_Badges.pdb
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\obj\Debug\03_BadgeUI.csprojAssemblyReference.cache
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\obj\Debug\03_BadgeUI.csproj.CoreCompileInputs.cache
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\obj\Debug\03_BadgeUI.csproj.CopyComplete
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\obj\Debug\03_BadgeUI.exe
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\obj\Debug\03_BadgeUI.pdb

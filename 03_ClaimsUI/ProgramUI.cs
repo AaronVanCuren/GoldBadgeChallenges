@@ -10,7 +10,6 @@ namespace _03_ClaimsUI
     public class ProgramUI
     {
         private readonly ClaimsRepo _claims = new ClaimsRepo();
-
         public void Run()
         {
             SeedClaimList();
@@ -30,9 +29,7 @@ namespace _03_ClaimsUI
                     "4. Remove Claim\n" +
                     "5. Update streaming content\n" +
                     "0. Exit");
-
                 string userInput = Console.ReadLine();
-
                 switch (userInput)
                 {
                     case "1":
@@ -42,10 +39,10 @@ namespace _03_ClaimsUI
                         NextClaim();
                         break;
                     case "3":
-                        CreateNewClaim();
+                        //CreateNewClaim();
                         break;
                     case "4":
-                        RemoveClaim();
+                        //RemoveClaim();
                         break;
                     case "0":
                         continueToRun = false;
@@ -58,12 +55,10 @@ namespace _03_ClaimsUI
                 }
             }
         }
-
         private void SeeAllClaims()
         {
             Console.Clear();
             Queue<Claim> listOfClaims = _claims.GetClaims();
-
             Console.WriteLine($"ClaimID" +
                 $"Type" +
                 $"Description" +
@@ -71,14 +66,12 @@ namespace _03_ClaimsUI
                 $"Date of Incident" +
                 $"Date of Claim" +
                 $"Valid\n");
-
             foreach (Claim claims in listOfClaims)
             {
                 DisplayClaim(claims);
             }
             Console.ReadKey();
         }
-
         private void DisplayClaim(Claim claims)
         {
             Console.WriteLine($"{claims.ClaimID}" +
@@ -94,23 +87,18 @@ namespace _03_ClaimsUI
         {
             Console.Clear();
             Queue<Claim> listOfClaims = _claims.GetClaims();
-
             foreach (Claim claims in listOfClaims)
             {
                 Console.WriteLine(claims);
             }
         }
-
         //private void CreateNewClaim();
-
         //private void RemoveClaim();
-
         private void SeedClaimList()
         {
             Claim car = new Claim(1, ClaimCatagory.car, "Car accident on 465", 400.00, new DateTime(18/25/4), new DateTime(18/27/4), true);
             Claim home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, new DateTime(18/11/4), new DateTime(18/12/4), true);
             Claim theft = new Claim(3, ClaimCatagory.theft, "Stolen pancakes", 4.00, new DateTime(18/27/4), new DateTime(18/1/6), true);
-
             _claims.AddClaim(car);
             _claims.AddClaim(home);
             _claims.AddClaim(theft);

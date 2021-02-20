@@ -2,18 +2,18 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("ClaimsRepoTests")]
+[assembly: AssemblyTitle("02_ClaimsRepoTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ClaimsRepoTests")]
+[assembly: AssemblyProduct("02_ClaimsRepoTests")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
 
-[assembly: Guid("a3853cc6-e464-4007-8335-e1677096b540")]
+[assembly: Guid("e5b9cce7-75cf-4c36-8313-0760ff1ff918")]
 
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]

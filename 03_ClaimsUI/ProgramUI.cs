@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _03_ClaimsUI
 {
-    class ProgramUI
+    public class ProgramUI
     {
         private readonly ClaimsRepo _claims = new ClaimsRepo();
 
@@ -95,7 +95,7 @@ namespace _03_ClaimsUI
             Console.Clear();
             Queue<Claim> listOfClaims = _claims.GetClaims();
 
-            foreach(Claim claims in listOfClaims)
+            foreach (Claim claims in listOfClaims)
             {
                 Console.WriteLine(claims);
             }

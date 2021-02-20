@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MenuUI")]
+[assembly: AssemblyTitle("03_MenuUI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MenuUI")]
+[assembly: AssemblyProduct("03_MenuUI")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("766bf340-c8c1-4cd3-9fef-8849072f3a01")]
+[assembly: Guid("7e39eb57-7ee0-447b-95d0-ca907d14e1cc")]
 
 // Version information for an assembly consists of the following four values:
 //

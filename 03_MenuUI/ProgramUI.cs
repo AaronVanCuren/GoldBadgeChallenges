@@ -180,13 +180,8 @@ namespace _03_MenuUI
             MenuItem blt = new MenuItem("BLT", "A BLT is a type of sandwich, named for the initials of its primary ingredients, " +
                 "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 4, "two");
 
-            MenuItem reuben = new MenuItem("Reuben", "The Reuben sandwich is an American grilled sandwich composed of corned beef, " +
-                "Swiss cheese, sauerkraut, and Russian dressing, grilled between slices of rye bread.",
-                new List<string>() { "rye bread", "corned beef", "swiss cheese", "sauerkraut", "russian dressing" }, 5, "three");
-
             _menu.AddMeal(club);
             _menu.AddMeal(blt);
-            _menu.AddMeal(reuben);
         }
     }
 }

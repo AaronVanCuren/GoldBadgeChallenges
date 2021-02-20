@@ -1,0 +1,2 @@
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\obj\Debug\03_BadgeUI.csprojAssemblyReference.cache
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_BadgeUI\obj\Debug\03_BadgeUI.csproj.CoreCompileInputs.cache

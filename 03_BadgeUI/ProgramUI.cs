@@ -67,11 +67,7 @@ namespace _03_BadgeUI
             {
                 Console.Clear();
                 Dictionary<int, List<string>> listOfBadges = _access.GetAllBadges();
-                foreach (int badge in listOfBadges)
-                {
-                    Console.WriteLine($"Badge ID: {badge.BadgeID}\n" +
-                        $"Door Acces: {badge.Doors");
-                }
+                
             }
 
         public void SeedDoors()

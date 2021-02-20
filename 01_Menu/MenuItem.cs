@@ -14,7 +14,7 @@ namespace _01_Menu
         public int Price { get; set; }
         public string ItemNumber { get; set; }
 
-
+        public MenuItem() { }
         public MenuItem(string name, string info, List<string> ingredients, int cost, string mealNumber)
         {
             Name = name;
@@ -30,9 +30,5 @@ namespace _01_Menu
 
         MenuItem blt = new MenuItem("BLT", "A BLT is a type of sandwich, named for the initials of its primary ingredients, " +
             "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 4, "two");
-
-        MenuItem reuben = new MenuItem("Reuben", "The Reuben sandwich is an American grilled sandwich composed of corned beef, " +
-            "Swiss cheese, sauerkraut, and Russian dressing, grilled between slices of rye bread.", 
-            new List<string>() { "rye bread", "corned beef", "swiss cheese", "sauerkraut", "russian dressing" }, 5, "three");
     }
 }

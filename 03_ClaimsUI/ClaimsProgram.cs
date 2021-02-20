@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _03_MenuUI
+namespace _03_ClaimsUI
 {
-    class Program
+    class ClaimsProgram
     {
         static void Main(string[] args)
         {
-            ProgramUI UI = new ProgramUI();
+            ClaimsProgramUI UI = new ClaimsProgramUI();
             UI.Run();
         }
     }

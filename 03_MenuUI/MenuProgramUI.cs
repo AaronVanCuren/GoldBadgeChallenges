@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace _03_MenuUI
 {
-    public class ProgramUI
+    public class MenuProgramUI
     {
         private readonly MenuRepo _menu = new MenuRepo();
         public void Run()
         {
             SeedMenu();
             RunMenu();
+            Console.ReadKey();
         }
         private void RunMenu()
         {

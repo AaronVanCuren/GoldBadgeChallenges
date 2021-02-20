@@ -11,3 +11,6 @@ D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\obj\
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\obj\Debug\02_ClaimsRepoTests.csproj.CopyComplete
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\obj\Debug\02_ClaimsRepoTests.dll
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\obj\Debug\02_ClaimsRepoTests.pdb
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\bin\Debug\01_Claims.dll
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\bin\Debug\01_Claims.pdb
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_ClaimsRepoTests\obj\Debug\02_ClaimsRepoTests.csprojAssemblyReference.cache

@@ -3,3 +3,4 @@ D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Claims\bin\Debug\01_
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.csproj.CoreCompileInputs.cache
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.dll
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.pdb
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.csprojAssemblyReference.cache

@@ -27,8 +27,10 @@ namespace _01_Menu
                 if (itemNumber.ToLower() == item.ItemNumber.ToLower())
                 {
                     return item;
-                }Console.WriteLine("Item cannot be found");
-            }return null;
+                }
+                //Console.WriteLine("Item cannot be found");
+            }throw new Exception("Item cannot be found");
+            //return null;
         }
         public bool UpdateMenuItem(string originalMenuItem, MenuItem newMenuItem)
         {

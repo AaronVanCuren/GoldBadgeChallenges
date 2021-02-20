@@ -28,7 +28,7 @@ namespace _01_Claims
             }
         }
         public Claim() { }
-        public Claim(int claimId, ClaimCatagory claimType, string description, double claimAmount, DateTime incidentDate, DateTime claimDate, bool validity)
+        public Claim(int claimId, ClaimCatagory claimType, string description, double claimAmount, DateTime incidentDate, DateTime claimDate)
         {
             ClaimID = claimId;
             ClaimType = claimType;
@@ -37,8 +37,8 @@ namespace _01_Claims
             DateOfIncident = incidentDate;
             DateOfClaim = claimDate;
         }
-        Claim car = new Claim(1, ClaimCatagory.car, "Car accident on 465", 400.00, new DateTime(18 / 25 / 4), new DateTime(18 / 27 / 4), true);
-        Claim home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, new DateTime(18 / 11 / 4), new DateTime(18 / 12 / 4), true);
-        Claim theft = new Claim(3, ClaimCatagory.theft, "Stolen pancakes", 4.00, new DateTime(18 / 27 / 4), new DateTime(18 / 1 / 6), true);
+        Claim car = new Claim(1, ClaimCatagory.car, "Car accident on 465", 400.00, new DateTime(18 / 25 / 4), new DateTime(18 / 27 / 4));
+        Claim home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, new DateTime(18 / 11 / 4), new DateTime(18 / 12 / 4));
+        Claim theft = new Claim(3, ClaimCatagory.theft, "Stolen pancakes", 4.00, new DateTime(18 / 27 / 4), new DateTime(18 / 1 / 6));
     }
 }

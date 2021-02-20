@@ -4,7 +4,7 @@ using System;
 namespace _02_BadgeRepoTests
 {
     [TestClass]
-    public class _02_BadgeRepoTests
+    public class BadgeRepoTests
     {
         [TestMethod]
         public void TestMethod1()

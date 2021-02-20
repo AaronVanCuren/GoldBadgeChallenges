@@ -15,14 +15,17 @@ namespace _01_Claims
             return _claims;
         }
         //Enter new claim
-        public void AddClaim(Claim claim)
+        public bool AddClaim(Claim claim)
         {
+            int count = _claims.Count;
             _claims.Enqueue(claim);
+            bool newClaim = _claims.Count > count;
+            return newClaim;
         }
         //Take care of next claim
         public void PeekClaim(Claim claim)
         {
-            
+            _claims.Peek();
         }
     }
 }

@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace _03_ClaimsUI
 {
-    public class ProgramUI
+    public class ClaimsProgramUI
     {
         private readonly ClaimsRepo _claims = new ClaimsRepo();
         public void Run()
         {
             SeedClaimList();
             RunMenu();
+            Console.ReadKey();
         }
 
         private void RunMenu()
@@ -39,16 +40,13 @@ namespace _03_ClaimsUI
                         NextClaim();
                         break;
                     case "3":
-                        //CreateNewClaim();
-                        break;
-                    case "4":
-                        //RemoveClaim();
+                        CreateNewClaim();
                         break;
                     case "0":
                         continueToRun = false;
                         break;
                     default:
-                        Console.WriteLine("Please enter a valid number between 1 and 4\n" +
+                        Console.WriteLine("Please enter a valid number between 1 and 3\n" +
                             "or enter 0 to exit.");
                         Console.ReadKey();
                         break;
@@ -92,13 +90,15 @@ namespace _03_ClaimsUI
                 Console.WriteLine(claims);
             }
         }
-        //private void CreateNewClaim();
-        //private void RemoveClaim();
+        private void CreateNewClaim()
+        {
+            Console.Clear();
+        }
         private void SeedClaimList()
         {
-            Claim car = new Claim(1, ClaimCatagory.car, "Car accident on 465", 400.00, new DateTime(18/25/4), new DateTime(18/27/4), true);
-            Claim home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, new DateTime(18/11/4), new DateTime(18/12/4), true);
-            Claim theft = new Claim(3, ClaimCatagory.theft, "Stolen pancakes", 4.00, new DateTime(18/27/4), new DateTime(18/1/6), true);
+            Claim car = new Claim(1, ClaimCatagory.car, "Car accident on 465", 400.00, new DateTime(18/25/4), new DateTime(18/27/4));
+            Claim home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, new DateTime(18/11/4), new DateTime(18/12/4));
+            Claim theft = new Claim(3, ClaimCatagory.theft, "Stolen pancakes", 4.00, new DateTime(18/27/4), new DateTime(18/1/6));
             _claims.AddClaim(car);
             _claims.AddClaim(home);
             _claims.AddClaim(theft);

@@ -9,11 +9,12 @@ namespace _02_MenuRepoTests
     public class MenuRepoTests
     {
         private MenuRepo _menu;
+        private MenuItem club;
         [TestInitialize]
         public void SeedMenu()
         {
             _menu = new MenuRepo();
-            MenuItem club = new MenuItem("Club", "A club sandwich, also called a clubhouse sandwich, is a sandwich of bread, " +
+            club = new MenuItem("Club", "A club sandwich, also called a clubhouse sandwich, is a sandwich of bread, " +
                 "sliced cooked poultry, ham or fried bacon, lettuce, tomato, and mayonnaise.", 
                 new List<string>() { "bread", "sliced cooked poultry", "ham", "lettuce", "tomato", "mayonnaise" }, 3, "one");
             MenuItem blt = new MenuItem("BLT", "A BLT is a type of sandwich, named for the initials of its primary ingredients, " +
@@ -35,6 +36,12 @@ namespace _02_MenuRepoTests
             Console.WriteLine(reuben.Name);
             //Assert
             Assert.IsTrue(success);
+        }
+        [TestMethod]
+        public void GetTest()
+        {
+            MenuItem searchMeal = _menu.GetMenuItem("one");
+            Assert.AreEqual(searchMeal, club);
         }
         [TestMethod]
         public void UpdateTest()

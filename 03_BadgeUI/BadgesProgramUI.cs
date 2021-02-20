@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace _03_BadgeUI
 {
-    public class ProgramUI
+    public class BadgesProgramUI
     {
         private readonly BadgesRepo _access = new BadgesRepo();
         public void Run()
         {
             SeedDoors();
             RunMenu();
+            Console.ReadKey();
         }
         public void RunMenu()
         {

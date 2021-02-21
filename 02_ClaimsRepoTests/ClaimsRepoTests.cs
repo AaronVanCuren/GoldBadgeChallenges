@@ -13,15 +13,15 @@ namespace _02_ClaimsRepoTests
         public void SeedClaims()
         {
             _repo = new ClaimsRepo();
-            Claim car = new Claim(1, ClaimCatagory.car, "Car accident on 465", 400.00, new DateTime(18 / 25 / 4), new DateTime(18 / 27 / 4));
-            _home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, new DateTime(18 / 11 / 4), new DateTime(18 / 12 / 4));
+            Claim car = new Claim(1, ClaimCatagory.Car, "Car accident on 465", 400.00, new DateTime(2018, 04, 25), new DateTime(2018, 04, 27));
+            _home = new Claim(2, ClaimCatagory.Home, "House fire in kitchen", 4000.00, new DateTime(2018, 04, 11), new DateTime(2018, 04, 12));
             _repo.AddClaim(car);
             _repo.AddClaim(_home);
         }
         [TestMethod]
         public void AddTest()
         {
-            Claim newClaim = new Claim(4, ClaimCatagory.theft, "Stolen shoes", 400, new DateTime(21 / 27 / 1), new DateTime(21 / 1 / 2));
+            Claim newClaim = new Claim(4, ClaimCatagory.Theft, "Stolen shoes", 4.00, new DateTime(2021, 01, 15), new DateTime(2021, 02, 02));
             bool wasAdded = _repo.AddClaim(newClaim);
             Console.WriteLine(_repo.GetClaims().Count);
             Console.WriteLine(wasAdded);

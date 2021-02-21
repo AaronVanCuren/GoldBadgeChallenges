@@ -14,7 +14,6 @@ namespace _03_ClaimsUI
         {
             SeedClaimList();
             RunMenu();
-            Console.ReadKey();
         }
         private void RunMenu()
         {
@@ -54,13 +53,8 @@ namespace _03_ClaimsUI
         {
             Console.Clear();
             Queue<Claim> listOfClaims = _claims.GetClaims();
-            Console.WriteLine($"ClaimID" +
-                $"Type" +
-                $"Description" +
-                $"Amount" +
-                $"Date of Incident" +
-                $"Date of Claim" +
-                $"Valid\n");
+            Console.WriteLine("{0,-10}{1,-10}{2,-30}{3,-10}{4,-20}{5,-20}{6,-10}", 
+                "ClaimID", "Type", "Description", "Amount", "Date of Incident", "Date of Claim", "Valid\n");
             foreach (Claim claims in listOfClaims)
             {
                 DisplayClaim(claims);
@@ -69,13 +63,9 @@ namespace _03_ClaimsUI
         }
         private void DisplayClaim(Claim claims)
         {
-            Console.WriteLine($"{claims.ClaimID}" +
-                $"{claims.ClaimType}" +
-                $"{claims.Description}" +
-                $"{claims.ClaimAmount}" +
-                $"{claims.DateOfIncident}" +
-                $"{claims.DateOfClaim}" +
-                $"{claims.IsValid}\n");
+            Console.WriteLine("{0,-10}{1,-10}{2,-30}{3,-10}{4,-20}{5,-20}{6,-10}", 
+                $"{claims.ClaimID}", $"{claims.ClaimType}", $"{claims.Description}", $"{claims.ClaimAmount}", 
+                $"{claims.DateOfIncident}", $"{claims.DateOfClaim}", $"{claims.IsValid}\n");
         }
         private void NextClaim()
         {
@@ -86,11 +76,17 @@ namespace _03_ClaimsUI
             answer = Console.ReadLine();
             if(answer == "y")
             {
+                Console.WriteLine("Claim is dequeuing...");
                 _claims.Dequeue();
+            }
+            else if (answer == "n")
+            {
+                Console.WriteLine("Returning to menu");
+                RunMenu();
             }
             else
             {
-                RunMenu();
+                Console.WriteLine("Invalid input.");
             }
         }
         private void CreateNewClaim()
@@ -99,9 +95,9 @@ namespace _03_ClaimsUI
         }
         private void SeedClaimList()
         {
-            Claim car = new Claim(1, ClaimCatagory.car, "Car accident on 465", 400.00, new DateTime(18/25/4), new DateTime(18/27/4));
-            Claim home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, new DateTime(18/11/4), new DateTime(18/12/4));
-            Claim theft = new Claim(3, ClaimCatagory.theft, "Stolen pancakes", 4.00, new DateTime(18/27/4), new DateTime(18/1/6));
+            Claim car = new Claim(1, ClaimCatagory.Car, "Car accident on 465", 400.00, new DateTime(2018, 04, 25), new DateTime(2018, 04, 27));
+            Claim home = new Claim(2, ClaimCatagory.Home, "House fire in kitchen", 4000.00, new DateTime(2018, 04, 11), new DateTime(2018, 04, 12));
+            Claim theft = new Claim(3, ClaimCatagory.Theft, "Stolen pancakes", 4.00, new DateTime(2018, 04, 27), new DateTime(2018, 06, 01));
             _claims.AddClaim(car);
             _claims.AddClaim(home);
             _claims.AddClaim(theft);

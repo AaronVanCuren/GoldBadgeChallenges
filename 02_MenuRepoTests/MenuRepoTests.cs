@@ -16,9 +16,9 @@ namespace _02_MenuRepoTests
             _menu = new MenuRepo();
             _club = new MenuItem("Club", "A club sandwich, also called a clubhouse sandwich, is a sandwich of bread, " +
                 "sliced cooked poultry, ham or fried bacon, lettuce, tomato, and mayonnaise.", 
-                new List<string>() { "bread", "sliced cooked poultry", "ham", "lettuce", "tomato", "mayonnaise" }, 3, "one");
+                new List<string>() { "bread", "sliced cooked poultry", "ham", "lettuce", "tomato", "mayonnaise" }, 3, "#1");
             MenuItem blt = new MenuItem("BLT", "A BLT is a type of sandwich, named for the initials of its primary ingredients, " +
-                "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 4, "two");
+                "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 4, "#2");
             _menu.AddMeal(_club);
             _menu.AddMeal(blt);
         }
@@ -28,7 +28,7 @@ namespace _02_MenuRepoTests
             //Arrange
             MenuItem reuben = new MenuItem("Reuben", "The Reuben sandwich is an American grilled sandwich composed of corned beef, " +
                 "Swiss cheese, sauerkraut, and Russian dressing, grilled between slices of rye bread.",
-                new List<string>() { "rye bread", "corned beef", "swiss cheese", "sauerkraut", "russian dressing" }, 5, "three");            
+                new List<string>() { "rye bread", "corned beef", "swiss cheese", "sauerkraut", "russian dressing" }, 5, "#3");            
             //Act
             bool success = _menu.AddMeal(reuben);
             Console.WriteLine(_menu.GetMenu().Count);
@@ -40,18 +40,18 @@ namespace _02_MenuRepoTests
         [TestMethod]
         public void GetTest()
         {
-            MenuItem searchMeal = _menu.GetMenuItem("one");
+            MenuItem searchMeal = _menu.GetMenuItem("#1");
             Assert.AreEqual(searchMeal, _club);
         }
         [TestMethod]
         public void UpdateTest()
         {
             MenuItem newMenuItem = new MenuItem("BLT", "A BLT is a type of sandwich, named for the initials of its primary ingredients, " +
-                "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 5, "two");
+                "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 5, "#2");
             bool updated = _menu.UpdateMenuItem("BLT", newMenuItem);
             Assert.IsTrue(updated);
-            MenuItem updatedMenuItem = _menu.GetMenuItem("BLT");
-            int expected = 4;
+            MenuItem updatedMenuItem = _menu.GetMenuItem("#2");
+            int expected = 5;
             int actual = updatedMenuItem.Price;
             Assert.AreEqual(expected, actual);
             Console.WriteLine(updatedMenuItem.Price);
@@ -59,8 +59,8 @@ namespace _02_MenuRepoTests
         [TestMethod]
         public void DeleteTest()
         {
-            bool deleteItem = _menu.DeleteMenuItem("blt");
-            Assert.IsTrue(deleteItem);
+            bool itemDeleted = _menu.DeleteMenuItem("blt");
+            Assert.IsTrue(itemDeleted);
         }
     }
 }

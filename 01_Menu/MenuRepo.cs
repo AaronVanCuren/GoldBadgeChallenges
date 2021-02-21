@@ -24,7 +24,7 @@ namespace _01_Menu
         {
             foreach (MenuItem item in _menu)
             {
-                if (itemNumber.ToLower() == item.ItemNumber.ToLower())
+                if (itemNumber == item.ItemNumber)
                 {
                     return item;
                 }
@@ -32,9 +32,9 @@ namespace _01_Menu
             }throw new Exception("Item cannot be found");
             //return null;
         }
-        public bool UpdateMenuItem(string originalMenuItem, MenuItem newMenuItem)
+        public bool UpdateMenuItem(string originalName, MenuItem newMenuItem)
         {
-            MenuItem oldMenuItem = GetMenuItem(originalMenuItem);
+            MenuItem oldMenuItem = GetMenuItem(originalName);
             if (oldMenuItem != null)
             {
                 oldMenuItem.Name = newMenuItem.Name;
@@ -47,8 +47,11 @@ namespace _01_Menu
         }
         public bool DeleteMenuItem(string Name)
         {
+            int count = _menu.Count;
             MenuItem contentToDelete = GetMenuItem(Name);
-            return _menu.Remove(contentToDelete);
+            _menu.Remove(contentToDelete);
+            bool itemDeleted = _menu.Count < count;
+            return itemDeleted;
         }
     }
 }

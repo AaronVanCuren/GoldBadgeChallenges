@@ -14,7 +14,6 @@ namespace _03_MenuUI
         {
             SeedMenu();
             RunMenu();
-            Console.ReadKey();
         }
         private void RunMenu()
         {
@@ -69,7 +68,7 @@ namespace _03_MenuUI
         }
         public void ShowMenuItem()
         {
-            string itemNumber = GetMenuItem();
+            string itemNumber = GetMenuItemFromUser();
             MenuItem item = _menu.GetMenuItem(itemNumber);
             if (item != null)
             {
@@ -79,10 +78,10 @@ namespace _03_MenuUI
                 Console.WriteLine("Invalid menu item.");
             }Console.ReadKey();
         }
-        private string GetMenuItem()
+        private string GetMenuItemFromUser()
         {
             Console.Clear();
-            Console.WriteLine("Enter a meal item number (one, two, three...etc)\n");
+            Console.WriteLine("Enter a meal item number (#1, #2, #3...etc)\n");
             string item = Console.ReadLine();
             return item;
         }
@@ -91,7 +90,7 @@ namespace _03_MenuUI
             Console.WriteLine($"Meal: {item.Name}\n" +
                 $"Description: {item.Description}\n" +
                 $"Ingredients: {item.Ingredients}\n" +
-                $"Price: {item.Price}\n" +
+                $"Price: {item.Price:C2}\n" +
                 $"Meal Number: {item.ItemNumber}\n");
         }
         public void CreateNewMenuItem()
@@ -106,7 +105,7 @@ namespace _03_MenuUI
             item.Ingredients = new List<string>() { };
             Console.WriteLine("Please enter a price: ");
             item.Price = Console.Read();
-            Console.WriteLine("Pleaes enter a menu item number (Ex. one, two...etc): ");
+            Console.WriteLine("Pleaes enter a menu item number (Ex. #1, #2, #3...etc): ");
             item.ItemNumber = Console.ReadLine();
         }
         public void RemoveMenuItem()
@@ -140,15 +139,77 @@ namespace _03_MenuUI
         }
         public void UpdateMenuItem()
         {
-
+            MenuItem meals;
+            do
+            {
+                string itemNumber = GetMenuItemFromUser();
+                meals = _menu.GetMenuItem(itemNumber);
+                if (itemNumber == "cancel")
+                {
+                    return;
+                }
+            } while (meals == null);
+            Console.WriteLine("What would you like to update?\n" +
+                "1. Name\n" +
+                "2. Description\n" +
+                "3. Ingredietns\n" +
+                "4. Price\n" +
+                "5. Item Number\n");
+            string option = Console.ReadLine();
+            switch (option)
+            {
+                case "1":
+                    Console.WriteLine("Enter a new name:");
+                    string newName = Console.ReadLine();
+                    meals.Name = newName;
+                    break;
+                case "2":
+                    Console.WriteLine("Enter a new description:");
+                    string newDescription = Console.ReadLine();
+                    meals.Description = newDescription;
+                    break;
+                case "3":
+                    Console.WriteLine("Enter a new list of ingredients where each ingredient is seperated by a comma:");
+                    bool continueToAdd = true;
+                    string answer;
+                    while (continueToAdd)
+                    {
+                        Console.Clear();
+                        var ingredients = new List<string>() { };
+                        Console.WriteLine("Add an ingredient:");
+                        string newIngredient = Console.ReadLine();
+                        ingredients.Add(newIngredient);
+                        Console.WriteLine("Would you like to add another ingredient(y/n)?");
+                        answer = Console.ReadLine();           
+                        if (answer == "n")
+                        {
+                            continueToAdd = false;
+                        }
+                    }
+                    break;
+                case "4":
+                    Console.WriteLine("Enter a new price:");
+                    int newPrice = Console.Read();
+                    meals.Price = newPrice;
+                    break;
+                case "5":
+                    Console.WriteLine("Enter a new item number (ex. #1):");
+                    string newItemNumber = Console.ReadLine();
+                    meals.ItemNumber = newItemNumber;
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid number between 1 and 5.\n");
+                    Console.ReadKey();
+                    break;
+            }
         }
         private void SeedMenu()
         {
             MenuItem club = new MenuItem("Club", "A club sandwich, also called a clubhouse sandwich, is a sandwich of bread, " +
                     "sliced cooked poultry, ham or fried bacon, lettuce, tomato, and mayonnaise.",
-                    new List<string>() { "bread", "sliced cooked poultry", "ham", "lettuce", "tomato", "mayonnaise" }, 3, "one");
+                    new List<string>() { "bread", "sliced cooked poultry", "ham", "lettuce", "tomato", "mayonnaise" }, 3, "#1");
             MenuItem blt = new MenuItem("BLT", "A BLT is a type of sandwich, named for the initials of its primary ingredients, " +
-                "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 4, "two");
+                "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 4, "#2");
             _menu.AddMeal(club);
             _menu.AddMeal(blt);
         }

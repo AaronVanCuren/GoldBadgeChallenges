@@ -46,7 +46,7 @@ namespace _01_Badges
             }
             throw new Exception("No badge found with that ID");
         }
-        public bool UpdateBadge(string badgeId)
+        public bool UpdateBadge(string badgeId, Badges newBadge)
         {
             Console.WriteLine("What is the badge number to update:");
             badgeId = Console.ReadLine();
@@ -88,12 +88,13 @@ namespace _01_Badges
         }
         public bool AddDoor(string badgeId)
         {
-            int count = GetDoorsByID(badgeId).Count();
+            //int count = GetDoorsByID(badgeId).Count();
             Console.WriteLine("List a door that this badge needs access to");
             string door = Console.ReadLine();
             _access[badgeId].Add(door);
-            bool doorAdded = GetDoorsByID(badgeId).Count() > count;
-            return doorAdded;
+            //bool doorAdded = GetDoorsByID(badgeId).Count() > count;
+            //return doorAdded;
+            return true;
         }
         public bool RemoveDoor(string badgeId)
         {

@@ -12,3 +12,5 @@ D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_BadgeRepo\obj\Debug\
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_BadgeRepo\obj\Debug\02_BadgeRepoTests.csproj.CopyComplete
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_BadgeRepo\obj\Debug\02_BadgeRepoTests.dll
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_BadgeRepo\obj\Debug\02_BadgeRepoTests.pdb
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_BadgeRepo\bin\Debug\01_Badges.dll
+D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\02_BadgeRepo\bin\Debug\01_Badges.pdb

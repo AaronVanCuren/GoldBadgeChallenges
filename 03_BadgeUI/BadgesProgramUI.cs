@@ -14,7 +14,6 @@ namespace _03_BadgeUI
         {
             SeedDoors();
             RunMenu();
-            Console.ReadKey();
         }
         public void RunMenu()
         {
@@ -25,7 +24,8 @@ namespace _03_BadgeUI
                 Console.WriteLine("Hello Security Admin, What would you like to do?\n\n" +
                     "1. Add a badge\n" +
                     "2. Edit a badge\n" +
-                    "3. List all badges");
+                    "3. List all badges\n" +
+                    "0. Exit");
                 string userInput = Console.ReadLine();
                 switch(userInput)
                 {
@@ -50,19 +50,30 @@ namespace _03_BadgeUI
             }
 
         }
-            private void AddBadge()
+        private void AddBadge()
+        {
+            Console.Clear();
+            Badges badge = new Badges();
+            Console.WriteLine("What is the number on the badge:");
+            string badgeId = Console.ReadLine();
+            _access.AddDoor(badgeId);
+            _access.AddBadge(badge);
+        }
+        private void UpdateBadge()
+        {
+            Console.Clear();
+
+        }
+        private void ShowAllBadges()
+        {
+            Console.Clear();
+            Dictionary<string, List<string>> listOfBadges = _access.GetAllBadges();
+            Console.WriteLine("{0, -15} {1, -100}", "Key Badge #", "Door Access");
+            foreach(KeyValuePair<string, List<string>> badge in listOfBadges)
             {
-                Console.Clear();
+                Console.WriteLine("{0, -15} {1, -100}", $"{badge.Key}", $"{badge.Value}\n");
             }
-            private void UpdateBadge()
-            {
-                Console.Clear();
-            }
-            private void ShowAllBadges()
-            {
-                Console.Clear();
-                Dictionary<int, List<string>> listOfBadges = _access.GetAllBadges();                
-            }
+        }
         public void SeedDoors()
         {
             Badges levelone = new Badges("1000", new List<string>() { "A1", "A2", "A3", "A4" });

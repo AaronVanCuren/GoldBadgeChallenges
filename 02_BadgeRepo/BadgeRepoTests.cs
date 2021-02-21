@@ -36,17 +36,13 @@ namespace _02_BadgeRepoTests
         [TestMethod]
         public void BadgeUpdateTest()
         {
-
-        }
-        [TestMethod]
-        public void AddDoorTest()
-        {
-
-        }
-        [TestMethod]
-        public void RemoveDoorTest()
-        {
-
+            Badges newBadge = new Badges("1000", new List<string>() { "A1", "A2", "A3", "A4", "B1" });
+            bool badgeUpdated = _accessRepo.UpdateBadge("1000", newBadge);
+            Assert.IsTrue(badgeUpdated);
+            List<string> updatedBadge = _accessRepo.GetDoorsByID("1000");
+            List<string> expected = newBadge.Doors;
+            List<string> actual = updatedBadge;
+            Assert.AreEqual(expected, actual);
         }
     }
 }

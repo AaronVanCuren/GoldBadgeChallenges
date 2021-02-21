@@ -23,9 +23,16 @@ namespace _01_Claims
             return newClaim;
         }
         //Take care of next claim
-        public void PeekClaim(Claim claim)
+        public Claim PeekClaim()
         {
-            _claims.Peek();
+            return _claims.Peek();
+        }
+        public bool Dequeue()
+        {
+            int count = _claims.Count;
+            _claims.Dequeue();
+            bool wasDequeued = _claims.Count < count;
+            return wasDequeued;
         }
     }
 }

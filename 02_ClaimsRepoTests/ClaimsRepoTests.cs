@@ -8,15 +8,15 @@ namespace _02_ClaimsRepoTests
     public class ClaimsRepoTests
     {
         private ClaimsRepo _repo;
-        private Claim home;
+        private Claim _home;
         [TestInitialize]
         public void SeedClaims()
         {
             _repo = new ClaimsRepo();
             Claim car = new Claim(1, ClaimCatagory.car, "Car accident on 465", 400.00, new DateTime(18 / 25 / 4), new DateTime(18 / 27 / 4));
-            home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, new DateTime(18 / 11 / 4), new DateTime(18 / 12 / 4));
+            _home = new Claim(2, ClaimCatagory.home, "House fire in kitchen", 4000.00, new DateTime(18 / 11 / 4), new DateTime(18 / 12 / 4));
             _repo.AddClaim(car);
-            _repo.AddClaim(home);
+            _repo.AddClaim(_home);
         }
         [TestMethod]
         public void AddTest()
@@ -27,6 +27,12 @@ namespace _02_ClaimsRepoTests
             Console.WriteLine(wasAdded);
             Console.WriteLine(newClaim.ClaimID);
             Assert.IsTrue(wasAdded);
+        }
+        [TestMethod]
+        public void DequeueTest()
+        {
+            bool wasDequeued = _repo.Dequeue();
+            Assert.IsTrue(wasDequeued);
         }
     }
 }

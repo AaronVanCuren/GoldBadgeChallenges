@@ -14,13 +14,13 @@ namespace _01_Menu
         public int Price { get; set; }
         public string ItemNumber { get; set; }
         public MenuItem() { }
-        public MenuItem(string name, string info, List<string> ingredients, int cost, string mealNumber)
+        public MenuItem(string name, string description, List<string> ingredients, int price, string itemNumber)
         {
             Name = name;
-            Description = info;
+            Description = description;
             Ingredients = ingredients;
-            Price = cost;
-            ItemNumber = mealNumber;
+            Price = price;
+            ItemNumber = itemNumber;
         }
         MenuItem club = new MenuItem("Club", "A club sandwich, also called a clubhouse sandwich, is a sandwich of bread, " +
                 "sliced cooked poultry, ham or fried bacon, lettuce, tomato, and mayonnaise.", 

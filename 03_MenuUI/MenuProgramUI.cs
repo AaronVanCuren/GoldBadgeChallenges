@@ -67,15 +67,6 @@ namespace _03_MenuUI
                 DisplayMenu(item);
             }Console.ReadKey();
         }
-        public void DisplayMenu(MenuItem item)
-        {
-            Console.WriteLine($"Meal: {item.Name}\n" +
-                $"Description: {item.Description}\n" +
-                $"Ingredients: {item.Ingredients}\n" +
-                $"Price: {item.Price}\n" +
-                $"Meal Number: {item.ItemNumber}\n");
-        }
-
         public void ShowMenuItem()
         {
             string itemNumber = GetMenuItem();
@@ -91,11 +82,18 @@ namespace _03_MenuUI
         private string GetMenuItem()
         {
             Console.Clear();
-            Console.WriteLine("Enter a meal item number\n");
+            Console.WriteLine("Enter a meal item number (one, two, three...etc)\n");
             string item = Console.ReadLine();
             return item;
         }
-
+        public void DisplayMenu(MenuItem item)
+        {
+            Console.WriteLine($"Meal: {item.Name}\n" +
+                $"Description: {item.Description}\n" +
+                $"Ingredients: {item.Ingredients}\n" +
+                $"Price: {item.Price}\n" +
+                $"Meal Number: {item.ItemNumber}\n");
+        }
         public void CreateNewMenuItem()
         {
             Console.Clear();

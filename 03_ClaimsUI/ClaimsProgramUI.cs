@@ -16,7 +16,6 @@ namespace _03_ClaimsUI
             RunMenu();
             Console.ReadKey();
         }
-
         private void RunMenu()
         {
             bool continueToRun = true;
@@ -27,8 +26,6 @@ namespace _03_ClaimsUI
                     "1. See all claims\n" +
                     "2. Take care of next claim\n" +
                     "3. Enter new claim\n" +
-                    "4. Remove Claim\n" +
-                    "5. Update streaming content\n" +
                     "0. Exit");
                 string userInput = Console.ReadLine();
                 switch (userInput)
@@ -80,14 +77,20 @@ namespace _03_ClaimsUI
                 $"{claims.DateOfClaim}" +
                 $"{claims.IsValid}\n");
         }
-
         private void NextClaim()
         {
+            string answer;
             Console.Clear();
-            Queue<Claim> listOfClaims = _claims.GetClaims();
-            foreach (Claim claims in listOfClaims)
+            Console.WriteLine("Do you want to deal with this claim now(y/n)?");
+            _claims.PeekClaim();
+            answer = Console.ReadLine();
+            if(answer == "y")
             {
-                Console.WriteLine(claims);
+                _claims.Dequeue();
+            }
+            else
+            {
+                RunMenu();
             }
         }
         private void CreateNewClaim()

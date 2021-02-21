@@ -18,6 +18,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Badges", "01_Badges\01_Badges.csproj", "{42A34C41-76D9-4B91-A30E-45F1E5845887}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_BadgeRepoTests", "02_BadgeRepo\02_BadgeRepoTests.csproj", "{E29AF902-8520-45CA-B7EE-2F940E7290E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{42A34C41-76D9-4B91-A30E-45F1E5845887} = {42A34C41-76D9-4B91-A30E-45F1E5845887}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_BadgeUI", "03_BadgeUI\03_BadgeUI.csproj", "{909B82DE-EB79-4EF0-B915-D380FA9C06D2}"
 EndProject

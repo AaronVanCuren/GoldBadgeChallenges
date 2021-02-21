@@ -29,7 +29,8 @@ namespace _01_Menu
                     return item;
                 }
                 //Console.WriteLine("Item cannot be found");
-            }throw new Exception("Item cannot be found");
+            }
+            throw new Exception("Item cannot be found");
             //return null;
         }
         public bool UpdateMenuItem(string originalName, MenuItem newMenuItem)

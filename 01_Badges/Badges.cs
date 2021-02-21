@@ -8,10 +8,10 @@ namespace _01_Badges
 {
     public class Badges
     {
-        public int BadgeID { get; set; }
+        public string BadgeID { get; set; }
         public List<string> Doors { get; set; }
         public Badges() { }
-        public Badges(int badgeId, List<string> doors)
+        public Badges(string badgeId, List<string> doors)
         {
             BadgeID = badgeId;
             Doors = doors;

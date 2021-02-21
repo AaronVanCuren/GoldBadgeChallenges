@@ -104,9 +104,10 @@ namespace _03_MenuUI
             Console.WriteLine("Please enter a list of ingredients: ");
             item.Ingredients = new List<string>() { };
             Console.WriteLine("Please enter a price: ");
-            item.Price = Console.Read();
-            Console.WriteLine("Pleaes enter a menu item number (Ex. #1, #2, #3...etc): ");
+            item.Price = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter a menu item number (Ex. #1, #2, #3...etc): ");
             item.ItemNumber = Console.ReadLine();
+            _menu.AddMeal(item);
         }
         public void RemoveMenuItem()
         {

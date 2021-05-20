@@ -19,30 +19,20 @@ namespace _02_BadgeRepoTests
             _levelOne = new Badges("1000", new List<string>() { "A1", "A2", "A3", "A4" });
             levelTwo = new Badges("2000", new List<string>() { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4" });
             Badges levelthree = new Badges("3000", new List<string>() { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4" });
-            _accessRepo.AddBadge(_levelOne);
-            _accessRepo.AddBadge(levelTwo);
-            _accessRepo.AddBadge(levelthree);
+            _accessRepo.AddBadge(_levelOne.BadgeID, _levelOne.Doors);
+            _accessRepo.AddBadge(levelTwo.BadgeID, levelTwo.Doors);
+            _accessRepo.AddBadge(levelthree.BadgeID, levelthree.Doors);
         }
+
         [TestMethod]
-        public void BadgeAddTest()
+        public void AddBadgeTest()
         {
             Badges badge = new Badges("4000", new List<string>() { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4", "D1", "D2", "D3", "D4" });
-            bool badgeAdded = _accessRepo.AddBadge(badge);
+            bool badgeAdded = _accessRepo.AddBadge(badge.BadgeID, badge.Doors);
             Console.WriteLine(_accessRepo.GetAllBadges().Count);
             Console.WriteLine(badgeAdded);
             Console.WriteLine(badge.BadgeID);
             Assert.IsTrue(badgeAdded);
-        }
-        [TestMethod]
-        public void BadgeUpdateTest()
-        {
-            Badges newBadge = new Badges("1000", new List<string>() { "A1", "A2", "A3", "A4", "B1" });
-            bool badgeUpdated = _accessRepo.UpdateBadge("1000", newBadge);
-            Assert.IsTrue(badgeUpdated);
-            List<string> updatedBadge = _accessRepo.GetDoorsByID("1000");
-            List<string> expected = newBadge.Doors;
-            List<string> actual = updatedBadge;
-            Assert.AreEqual(expected, actual);
         }
     }
 }

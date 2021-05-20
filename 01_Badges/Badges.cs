@@ -9,8 +9,11 @@ namespace _01_Badges
     public class Badges
     {
         public string BadgeID { get; set; }
+
         public List<string> Doors { get; set; }
+
         public Badges() { }
+
         public Badges(string badgeId, List<string> doors)
         {
             BadgeID = badgeId;

@@ -8,3 +8,13 @@ D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_MenuUI\obj\Debug\03_
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_MenuUI\obj\Debug\03_MenuUI.csproj.CopyComplete
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_MenuUI\obj\Debug\03_MenuUI.exe
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_MenuUI\obj\Debug\03_MenuUI.pdb
+D:\Projects\GoldBadgeChallenges\03_MenuUI\bin\Debug\03_MenuUI.exe.config
+D:\Projects\GoldBadgeChallenges\03_MenuUI\bin\Debug\03_MenuUI.exe
+D:\Projects\GoldBadgeChallenges\03_MenuUI\bin\Debug\03_MenuUI.pdb
+D:\Projects\GoldBadgeChallenges\03_MenuUI\bin\Debug\01_Menu.dll
+D:\Projects\GoldBadgeChallenges\03_MenuUI\bin\Debug\01_Menu.pdb
+D:\Projects\GoldBadgeChallenges\03_MenuUI\obj\Debug\03_MenuUI.csprojAssemblyReference.cache
+D:\Projects\GoldBadgeChallenges\03_MenuUI\obj\Debug\03_MenuUI.csproj.CoreCompileInputs.cache
+D:\Projects\GoldBadgeChallenges\03_MenuUI\obj\Debug\03_MenuUI.csproj.CopyComplete
+D:\Projects\GoldBadgeChallenges\03_MenuUI\obj\Debug\03_MenuUI.exe
+D:\Projects\GoldBadgeChallenges\03_MenuUI\obj\Debug\03_MenuUI.pdb

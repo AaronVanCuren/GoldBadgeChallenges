@@ -8,3 +8,13 @@ D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_ClaimsUI\obj\Debug\0
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_ClaimsUI\obj\Debug\03_ClaimsUI.csproj.CopyComplete
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_ClaimsUI\obj\Debug\03_ClaimsUI.exe
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\03_ClaimsUI\obj\Debug\03_ClaimsUI.pdb
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\bin\Debug\03_ClaimsUI.exe.config
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\bin\Debug\03_ClaimsUI.exe
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\bin\Debug\03_ClaimsUI.pdb
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\bin\Debug\01_Claims.dll
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\bin\Debug\01_Claims.pdb
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\obj\Debug\03_ClaimsUI.csprojAssemblyReference.cache
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\obj\Debug\03_ClaimsUI.csproj.CoreCompileInputs.cache
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\obj\Debug\03_ClaimsUI.csproj.CopyComplete
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\obj\Debug\03_ClaimsUI.exe
+D:\Projects\GoldBadgeChallenges\03_ClaimsUI\obj\Debug\03_ClaimsUI.pdb

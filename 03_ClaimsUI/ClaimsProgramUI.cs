@@ -91,7 +91,7 @@ namespace _03_ClaimsUI
         }
         private void CreateNewClaim()
         {
-            Console.Clear();
+            Console.Clear(); 
         }
         private void SeedClaimList()
         {

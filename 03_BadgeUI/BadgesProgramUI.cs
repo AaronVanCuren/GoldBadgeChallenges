@@ -10,11 +10,13 @@ namespace _03_BadgeUI
     public class BadgesProgramUI
     {
         private readonly BadgesRepo _access = new BadgesRepo();
+
         public void Run()
         {
-            SeedDoors();
+            Seed();
             RunMenu();
         }
+
         public void RunMenu()
         {
             bool continueToRun = true;
@@ -27,7 +29,7 @@ namespace _03_BadgeUI
                     "3. List all badges\n" +
                     "0. Exit");
                 string userInput = Console.ReadLine();
-                switch(userInput)
+                switch (userInput)
                 {
                     case "1":
                         AddBadge();
@@ -43,43 +45,147 @@ namespace _03_BadgeUI
                         break;
                     default:
                         Console.WriteLine("Please enter a valid number between 1 and 3\n" +
-                            "or presss 4 to exit");
+                            "or presss 0 to exit");
                         Console.ReadKey();
                         break;
                 }
             }
 
         }
+
         private void AddBadge()
         {
             Console.Clear();
-            Badges badge = new Badges();
             Console.WriteLine("What is the number on the badge:");
-            string badgeId = Console.ReadLine();
-            _access.AddDoor(badgeId);
-            _access.AddBadge(badge);
+            string badge = Console.ReadLine();
+
+            Console.WriteLine("List a door that this badge needs access to");
+            List<string> door = new List<string> { Console.ReadLine() };
+
+            bool wasAdded = true;
+            while (wasAdded)
+            {
+                Console.WriteLine("Any other doors (Y/N)?");
+                string response = Console.ReadLine().ToLower();
+                switch (response)
+                {
+                    case "y":
+                        {
+                            Console.WriteLine("List a door that it needs access to: ");
+                            door.Add(Console.ReadLine());
+                            break;
+                        }
+                    case "n":
+                        {
+                            wasAdded = false;
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Please type either Y or N.");
+                            break;
+                        }
+                }
+            }
+            _access.AddBadge(badge, door);
         }
+
         private void UpdateBadge()
         {
             Console.Clear();
-
+            Console.WriteLine("What is the badge number to update?");
+            string badge = Console.ReadLine();
+            Console.WriteLine("What would you like to do? \n" +
+                "1. Remove a Door \n" +
+                "2. Add a Door \n");
+            string door = Console.ReadLine();
+            switch (door)
+            {
+                case "1":
+                    {
+                        Console.WriteLine("Which door would you like to remove?");
+                        string removeDoor = Console.ReadLine();
+                        _access.RemoveDoor(badge, removeDoor);
+                        BadgeAccess(badge);
+                        Console.WriteLine("Press any key to continue....");
+                        Console.ReadKey();
+                        break;
+                    }
+                case "2":
+                    {
+                        Console.WriteLine("Which door would you like to add?");
+                        string addDoor = Console.ReadLine();
+                        _access.AddDoorAccess(badge, addDoor);
+                        BadgeAccess(badge);
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Please select either 1 or 2.");
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
+                        break;
+                    }
+            }
         }
+
+        private void BadgeAccess(string badgeAccess)
+        {
+            // Dictionary<string, List<string>> access = _access.GetAllBadges();
+            Console.WriteLine($"{badgeAccess} has access to: ");
+            Badges badge = _access.GetBadgeByID(badgeAccess);
+            foreach (string door in badge.Doors)
+            {
+                Console.Write($"{door} \n");
+            }
+        }
+
         private void ShowAllBadges()
         {
             Console.Clear();
             Dictionary<string, List<string>> listOfBadges = _access.GetAllBadges();
-            Console.WriteLine("{0, -15} {1, -100}", "Key Badge #", "Door Access");
-            foreach(KeyValuePair<string, List<string>> badge in listOfBadges)
+            // Console.WriteLine("{0, -15} {1, -50}", "Badge #", "Door Access");
+
+            foreach (KeyValuePair<string, List<string>> badge in listOfBadges)
             {
-                Console.WriteLine("{0, -15} {1, -100}", $"{badge.Key}", $"{badge.Value}\n");
+                Console.Write($" Badge #: {badge.Key} \n" +
+                " Door Access: ");
+                foreach (string door in badge.Value)
+                {
+                    Console.Write($"{door}, ");
+                }
+                Console.WriteLine("");
+                Console.WriteLine("----------------");
             }
+
+            /*foreach (KeyValuePair<string, List<string>> badge in listOfBadges)
+            {
+                foreach (string door in badge.Value)
+                {
+                    Console.Write("{0, -15} {0, -50}", $"{badge.Key}", $"{door}\n");
+                }
+                //foreach (string door in badge.Value)
+                //{
+                //Console.WriteLine("{0, -100}", $"{listOfBadges.Values}");
+                //}
+            }*/
+            Console.WriteLine("Press any key to continue... ");
+            Console.ReadKey();
         }
-        public void SeedDoors()
+
+        public void Seed()
         {
             Badges levelone = new Badges("1000", new List<string>() { "A1", "A2", "A3", "A4" });
             Badges leveltwo = new Badges("2000", new List<string>() { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4" });
             Badges levelthree = new Badges("3000", new List<string>() { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4" });
             Badges levelfour = new Badges("4000", new List<string>() { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4", "D1", "D2", "D3", "D4" });
+
+            _access.AddBadge(levelone.BadgeID, levelone.Doors);
+            _access.AddBadge(leveltwo.BadgeID, leveltwo.Doors);
+            _access.AddBadge(levelthree.BadgeID, levelthree.Doors);
+            _access.AddBadge(levelfour.BadgeID, levelfour.Doors);
         }
     }
 }

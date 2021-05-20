@@ -4,3 +4,9 @@ D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Claims\obj\Debug\01_
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.dll
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.pdb
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.csprojAssemblyReference.cache
+D:\Projects\GoldBadgeChallenges\01_Claims\bin\Debug\01_Claims.dll
+D:\Projects\GoldBadgeChallenges\01_Claims\bin\Debug\01_Claims.pdb
+D:\Projects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.csprojAssemblyReference.cache
+D:\Projects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.csproj.CoreCompileInputs.cache
+D:\Projects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.dll
+D:\Projects\GoldBadgeChallenges\01_Claims\obj\Debug\01_Claims.pdb

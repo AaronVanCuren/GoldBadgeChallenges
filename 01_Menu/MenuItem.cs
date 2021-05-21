@@ -9,11 +9,17 @@ namespace _01_Menu
     public class MenuItem
     {
         public string Name { get; set; }
+
         public string Description { get; set; }
+
         public List<string> Ingredients { get; set; }
+
         public int Price { get; set; }
+
         public string ItemNumber { get; set; }
+
         public MenuItem() { }
+
         public MenuItem(string name, string description, List<string> ingredients, int price, string itemNumber)
         {
             Name = name;

@@ -9,17 +9,12 @@ namespace _01_Menu
     public class MenuRepo
     {
         private readonly List<MenuItem> _menu = new List<MenuItem>();
-        public bool AddMeal(MenuItem item)
-        {
-            int count = _menu.Count;
-            _menu.Add(item);
-            bool success = _menu.Count > count;
-            return success;
-        }
+
         public List<MenuItem> GetMenu()
         {
             return _menu;
         }
+
         public MenuItem GetMenuItem(string itemNumber)
         {
             foreach (MenuItem item in _menu)
@@ -28,11 +23,20 @@ namespace _01_Menu
                 {
                     return item;
                 }
-                //Console.WriteLine("Item cannot be found");
             }
             throw new Exception("Item cannot be found");
-            //return null;
         }
+
+        public bool AddMeal(MenuItem item)
+        {
+            int count = _menu.Count;
+
+            _menu.Add(item);
+
+            bool success = _menu.Count > count;
+            return success;
+        }
+
         public bool UpdateMenuItem(string originalName, MenuItem newMenuItem)
         {
             MenuItem oldMenuItem = GetMenuItem(originalName);
@@ -44,13 +48,17 @@ namespace _01_Menu
                 oldMenuItem.Price = newMenuItem.Price;
                 oldMenuItem.ItemNumber = newMenuItem.ItemNumber;
                 return true;
-            }return false;
+            }
+            return false;
         }
-        public bool DeleteMenuItem(string Name)
+
+        public bool DeleteMenuItem(string itemNumber)
         {
             int count = _menu.Count;
-            MenuItem contentToDelete = GetMenuItem(Name);
+
+            MenuItem contentToDelete = GetMenuItem(itemNumber);
             _menu.Remove(contentToDelete);
+
             bool itemDeleted = _menu.Count < count;
             return itemDeleted;
         }

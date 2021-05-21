@@ -53,6 +53,27 @@ namespace _03_BadgeUI
 
         }
 
+        private void ShowAllBadges()
+        {
+            Console.Clear();
+            Dictionary<string, List<string>> listOfBadges = _access.GetAllBadges();
+
+            foreach (KeyValuePair<string, List<string>> badge in listOfBadges)
+            {
+                Console.Write($" Badge #: {badge.Key} \n" +
+                " Door Access: ");
+                foreach (string door in badge.Value)
+                {
+                    Console.Write($"{door}, ");
+                }
+                Console.WriteLine("");
+                Console.WriteLine("----------------");
+            }
+
+            Console.WriteLine("Press any key to continue... ");
+            Console.ReadKey();
+        }
+
         private void AddBadge()
         {
             Console.Clear();
@@ -133,46 +154,12 @@ namespace _03_BadgeUI
 
         private void BadgeAccess(string badgeAccess)
         {
-            // Dictionary<string, List<string>> access = _access.GetAllBadges();
             Console.WriteLine($"{badgeAccess} has access to: ");
             Badges badge = _access.GetBadgeByID(badgeAccess);
             foreach (string door in badge.Doors)
             {
                 Console.Write($"{door} \n");
             }
-        }
-
-        private void ShowAllBadges()
-        {
-            Console.Clear();
-            Dictionary<string, List<string>> listOfBadges = _access.GetAllBadges();
-            // Console.WriteLine("{0, -15} {1, -50}", "Badge #", "Door Access");
-
-            foreach (KeyValuePair<string, List<string>> badge in listOfBadges)
-            {
-                Console.Write($" Badge #: {badge.Key} \n" +
-                " Door Access: ");
-                foreach (string door in badge.Value)
-                {
-                    Console.Write($"{door}, ");
-                }
-                Console.WriteLine("");
-                Console.WriteLine("----------------");
-            }
-
-            /*foreach (KeyValuePair<string, List<string>> badge in listOfBadges)
-            {
-                foreach (string door in badge.Value)
-                {
-                    Console.Write("{0, -15} {0, -50}", $"{badge.Key}", $"{door}\n");
-                }
-                //foreach (string door in badge.Value)
-                //{
-                //Console.WriteLine("{0, -100}", $"{listOfBadges.Values}");
-                //}
-            }*/
-            Console.WriteLine("Press any key to continue... ");
-            Console.ReadKey();
         }
 
         public void Seed()

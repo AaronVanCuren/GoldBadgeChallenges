@@ -10,18 +10,23 @@ namespace _02_MenuRepoTests
     {
         private MenuRepo _menu;
         private MenuItem _club;
+
         [TestInitialize]
         public void SeedMenu()
         {
             _menu = new MenuRepo();
+
             _club = new MenuItem("Club", "A club sandwich, also called a clubhouse sandwich, is a sandwich of bread, " +
                 "sliced cooked poultry, ham or fried bacon, lettuce, tomato, and mayonnaise.", 
                 new List<string>() { "bread", "sliced cooked poultry", "ham", "lettuce", "tomato", "mayonnaise" }, 3, "#1");
+
             MenuItem blt = new MenuItem("BLT", "A BLT is a type of sandwich, named for the initials of its primary ingredients, " +
                 "bacon, lettuce and tomato.", new List<string>() { "bread", "bacon", "lettuce", "tomato", "mayonnaise" }, 4, "#2");
+
             _menu.AddMeal(_club);
             _menu.AddMeal(blt);
         }
+
         [TestMethod]
         public void AddTest()
         {
@@ -37,12 +42,14 @@ namespace _02_MenuRepoTests
             //Assert
             Assert.IsTrue(success);
         }
+
         [TestMethod]
         public void GetTest()
         {
             MenuItem searchMeal = _menu.GetMenuItem("#1");
             Assert.AreEqual(searchMeal, _club);
         }
+
         [TestMethod]
         public void UpdateTest()
         {
@@ -56,10 +63,11 @@ namespace _02_MenuRepoTests
             Assert.AreEqual(expected, actual);
             Console.WriteLine(updatedMenuItem.Price);
         }
+
         [TestMethod]
         public void DeleteTest()
         {
-            bool itemDeleted = _menu.DeleteMenuItem("blt");
+            bool itemDeleted = _menu.DeleteMenuItem("#1");
             Assert.IsTrue(itemDeleted);
         }
     }

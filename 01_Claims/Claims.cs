@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace _01_Claims
 {
-    public enum ClaimCatagory { Car, Home, Theft };
+    public enum ClaimType { Car, Home, Theft };
     public class Claim
     {
         public int ClaimID { get; set; }
-        public ClaimCatagory ClaimType { get; set; }
+        public ClaimType ClaimType { get; set; }
         public string Description { get; set; }
         public double ClaimAmount { get; set; }
         public DateTime DateOfIncident { get; set; }
@@ -28,7 +29,7 @@ namespace _01_Claims
             }
         }
         public Claim() { }
-        public Claim(int claimId, ClaimCatagory claimType, string description, double claimAmount, DateTime incidentDate, DateTime claimDate)
+        public Claim(int claimId, ClaimType claimType, string description, double claimAmount, DateTime incidentDate, DateTime claimDate)
         {
             ClaimID = claimId;
             ClaimType = claimType;

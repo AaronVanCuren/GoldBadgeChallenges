@@ -6,7 +6,7 @@ D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Badges\obj\Debug\01_
 D:\AAA_DOCUMENTS\ElevenFiftyProjects\GoldBadgeChallenges\01_Badges\obj\Debug\01_Badges.csprojAssemblyReference.cache
 D:\Projects\GoldBadgeChallenges\01_Badges\bin\Debug\01_Badges.dll
 D:\Projects\GoldBadgeChallenges\01_Badges\bin\Debug\01_Badges.pdb
-D:\Projects\GoldBadgeChallenges\01_Badges\obj\Debug\01_Badges.csprojAssemblyReference.cache
 D:\Projects\GoldBadgeChallenges\01_Badges\obj\Debug\01_Badges.csproj.CoreCompileInputs.cache
 D:\Projects\GoldBadgeChallenges\01_Badges\obj\Debug\01_Badges.dll
 D:\Projects\GoldBadgeChallenges\01_Badges\obj\Debug\01_Badges.pdb
+D:\Projects\GoldBadgeChallenges\01_Badges\obj\Debug\01_Badges.csproj.AssemblyReference.cache

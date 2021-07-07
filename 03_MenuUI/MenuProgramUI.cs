@@ -95,7 +95,7 @@ namespace _03_MenuUI
             Console.WriteLine("Please enter a description: ");
             item.Description = Console.ReadLine();
 
-            Console.WriteLine("Please enter a an ingredient: ");
+            Console.WriteLine("Please enter an ingredient: ");
             item.Ingredients = new List<string>() { Console.ReadLine() };
 
             bool wasAdded = true;
